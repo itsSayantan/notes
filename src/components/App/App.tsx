@@ -1,5 +1,13 @@
+import Home from "../../pages/Home";
+import Footer from "../Footer";
+
 const App = () => {
-  return <div></div>;
+  return (
+    <>
+      <Home />
+      <Footer />
+    </>
+  );
 };
 
 export default App;

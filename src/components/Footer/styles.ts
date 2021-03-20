@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { THEME } from "../../shared/constants";
-import { Center } from "../../shared/styles";
+import { AlignCenterSpaceBetween } from "../../shared/styles";
 
 import { GithubLinksWrapperProps } from "../../shared/types/props";
 
@@ -10,7 +10,7 @@ const FooterWrapper = styled.div`
   justify-content: space-between;
   margin: 0 auto;
   height: 50px;
-  ${Center}
+  ${AlignCenterSpaceBetween}
 
   @media (min-width: 480px) {
     max-width: 1024px;
@@ -27,20 +27,20 @@ const VersionText = styled.div`
 
 VersionText.displayName = "VersionText";
 
-const GithubLinkWrapper = styled.div`
-  width: 32px;
-  height: 32px;
-  background-image: url(${(props: GithubLinksWrapperProps) =>
+const GithubLink = styled.a``;
+
+GithubLink.displayName = "GithubLink";
+
+const GithubLinkImage = styled.div`
+  width: 24px;
+  height: 24px;
+  background-image: url(assets/images/${(props: GithubLinksWrapperProps) =>
     props.backgroundImage});
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
 `;
 
-GithubLinkWrapper.displayName = "GithubLinkWrapper";
+GithubLinkImage.displayName = "GithubLinkImage";
 
-const GithubLink = styled.a``;
-
-GithubLink.displayName = "GithubLink";
-
-export { FooterWrapper, VersionText, GithubLinkWrapper, GithubLink };
+export { FooterWrapper, VersionText, GithubLink, GithubLinkImage };

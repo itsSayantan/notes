@@ -1,3 +1,3 @@
 export type GithubLinksWrapperProps = {
-  backgroundImage: any;
+  backgroundImage: string;
 };

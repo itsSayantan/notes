@@ -1,13 +1,5 @@
 const App = () => {
-  return (
-    <div
-      onClick={() => {
-        console.log("clicked");
-      }}
-    >
-      Click me!
-    </div>
-  );
+  return <div></div>;
 };
 
 export default App;

@@ -1,4 +1,4 @@
-import { css } from "styled-components";
+import styled, { css } from "styled-components";
 
 import { THEME } from "./constants";
 
@@ -35,3 +35,28 @@ export const NeumorphicAllStyles = css`
   background: ${THEME.background};
   box-shadow: ${THEME.boxShadow};
 `;
+
+export const BackgroundImageStyles = css`
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+`;
+
+const Button = styled.button`
+  padding: 10px;
+  color: ${THEME.color};
+  border-radius: 8px;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  ${NeumorphicAllStyles};
+  ${Center};
+
+  &:active {
+    box-shadow: ${THEME.flippedBoxShadow};
+  }
+`;
+
+Button.displayName = "Button";
+
+export { Button };

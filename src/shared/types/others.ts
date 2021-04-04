@@ -7,8 +7,11 @@ export type AppContextType = {
 
 export type ThemeObject = {
   color: string;
+  secondaryColor: string;
   backgroundColor: string;
   background: string;
+  borderColor: string;
   boxShadow: string;
+  flippedBoxShadow: string;
   githubLogoName: string;
 };

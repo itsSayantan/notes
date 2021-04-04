@@ -1,7 +1,10 @@
 import styled from "styled-components";
 
 import { THEME } from "../../shared/constants";
-import { AlignCenterSpaceBetween } from "../../shared/styles";
+import {
+  AlignCenterSpaceBetween,
+  BackgroundImageStyles,
+} from "../../shared/styles";
 
 import { GithubLinksWrapperProps } from "../../shared/types/props";
 
@@ -15,6 +18,10 @@ const FooterWrapper = styled.div`
   @media (min-width: 480px) {
     max-width: 1024px;
   }
+
+  @media (max-width: 480px) {
+    padding: 0 10px;
+  }
 `;
 
 FooterWrapper.displayName = "FooterWrapper";
@@ -22,7 +29,6 @@ FooterWrapper.displayName = "FooterWrapper";
 const VersionText = styled.div`
   color: ${THEME.color};
   font-size: 13px;
-  padding: 10px;
 `;
 
 VersionText.displayName = "VersionText";
@@ -36,8 +42,7 @@ const GithubLinkImage = styled.div`
   height: 24px;
   background-image: url(assets/images/${(props: GithubLinksWrapperProps) =>
     props.backgroundImage});
-  background-repeat: no-repeat;
-  background-size: cover;
+  ${BackgroundImageStyles};
   cursor: pointer;
 `;
 

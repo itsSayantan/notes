@@ -1,1 +1,4 @@
-export enum Actions {}
+export enum Actions {
+  SET_LOADING = "sl",
+  FETCH_NOTES = "fn",
+}

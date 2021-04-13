@@ -1,5 +1,8 @@
 import { StateType } from "../types/reducer";
 
 export function getInitialStateValues(): StateType {
-  return {};
+  return {
+    isLoading: false,
+    notes: [],
+  };
 }

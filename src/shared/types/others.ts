@@ -15,3 +15,10 @@ export type ThemeObject = {
   flippedBoxShadow: string;
   githubLogoName: string;
 };
+
+export type NoteType = {
+  id: string;
+  content: string;
+  createdOn: string;
+  createdBy: string;
+};

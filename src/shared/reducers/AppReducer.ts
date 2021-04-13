@@ -7,12 +7,18 @@ const createInitialState = (initialState: StateType) => {
 
 const reducer = (state: StateType, action: ActionType): StateType => {
   switch (action?.type) {
-    // case Actions.setLoader: {
-    //   return {
-    //     ...state,
-    //     loader: action.payload,
-    //   };
-    // }
+    case Actions.SET_LOADING: {
+      return {
+        ...state,
+        isLoading: action.payload.isLoading,
+      };
+    }
+    case Actions.FETCH_NOTES: {
+      return {
+        ...state,
+        notes: action.payload.notes,
+      };
+    }
     default: {
       return state;
     }

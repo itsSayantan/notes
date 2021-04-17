@@ -2,11 +2,15 @@ import React from "react";
 import ContentEditable, { ContentEditableEvent } from "react-contenteditable";
 
 import { CREATE_NOTE_DEFAULT_TEXT } from "../../shared/constants";
+import { Actions } from "../../shared/constants/actions";
+import { AppContext } from "../../shared/contexts/AppContext";
 import { Button } from "../../shared/styles";
+import { sanitizeNoteText } from "../../shared/utils";
 
 import { CreateNoteWrapper, ActionArea } from "./styles";
 
 const CreateNote = () => {
+  const { dispatch } = React.useContext(AppContext);
   const ContentEditableRef: React.RefObject<HTMLDivElement> = React.createRef();
   const html = React.useRef(CREATE_NOTE_DEFAULT_TEXT);
   const [noteText, setNoteText] = React.useState("");
@@ -43,7 +47,20 @@ const CreateNote = () => {
     }
   };
 
-  const handleNoteSave = () => {};
+  const handleNoteSave = () => {
+    if (noteText.trim()) {
+      dispatch({
+        type: Actions.SAVE_NOTE,
+        payload: {
+          id: String(Math.ceil(Math.random() * 1000)),
+          content: sanitizeNoteText(noteText),
+          createdBy: "Sayantan",
+          createdOn: new Date().toLocaleString(),
+        },
+      });
+      handleNoteCancel();
+    }
+  };
 
   return (
     <CreateNoteWrapper isPlaceholderVisible={isPlaceholderVisible}>

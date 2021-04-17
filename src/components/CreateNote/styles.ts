@@ -3,7 +3,8 @@ import { THEME } from "../../shared/constants";
 import { CreateNoteWrapperProps } from "../../shared/types/props";
 
 const CreateNoteWrapper = styled.div`
-  width: 100%;
+  margin-left: 20px;
+  width: calc(100% - 40px);
   padding: 10px;
   box-sizing: border-box;
   background: ${THEME.background};

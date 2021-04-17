@@ -16,6 +16,9 @@ export const THEMES: Array<ThemeObject> = [
 export const THEME = THEMES[SELECTED_THEME - 1];
 export const CREATE_NOTE_DEFAULT_TEXT = "Enter note here...";
 export const DEFAULT_LOADING_TEXT = "Loading...";
+export const NO_NOTES_TEXT = "No notes present";
+export const COPY_CLICKED_TEXT = "Copied";
+export const DELETE_CLICKED_TEXT = "Press again to delete";
 export const Z_INDICES = {
   Loading: 2,
 };
